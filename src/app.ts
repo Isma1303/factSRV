@@ -14,12 +14,14 @@ dotenv.config();
 const app = express();
 
 db();
+
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(cookieParser());
+
 app.use(
   cors({
-    origin: "https://factsrv.onrender.com",
+    origin: process.env.CLIENT_ORIGIN,
     credentials: true,
   })
 );
