@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const abonos_controller_1 = require("./abonos.controller");
+const router = (0, express_1.Router)();
+router.post("/abonos", abonos_controller_1.createAb);
+router.get("/abonos", abonos_controller_1.getAb);
+router.put("/update/abono/:id", abonos_controller_1.updateAb);
+router.delete("/delete/abono/:id", abonos_controller_1.deleteAb);
+exports.default = router;
