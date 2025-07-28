@@ -7,6 +7,9 @@ import authroutes from "./auth/auth.route";
 import clientRoutes from "./client/client.route";
 import abonosRoutes from "./abonos/abonos.route";
 import saleRoutes from "./compras/compras.route";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 
@@ -16,7 +19,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: process.env.CORS,
     credentials: true,
   })
 );
